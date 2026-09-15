@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: Password Policy Checker
+Implementation-Version: 1.0.0
+Implementation-Vendor: Evgeniy
+Main-Class: com.example.policy.Main
