@@ -34,4 +34,36 @@ public final class Main {
 
         System.out.println(result);
     }
+
+    /**
+     * Demonstration method containing intentional Checkstyle violations.
+     *
+     * <p>This method is never called by the application. It exists only
+     * to demonstrate how Checkstyle detects source-code violations and
+     * how Warnings Next Generation displays them in Jenkins.</p>
+     */
+    private static void bad_method_name() {
+        int BadVariable = 10;
+        String wrong_variable = "demo";
+        boolean BAD_FLAG = true;
+
+        System.out.println(BadVariable + wrong_variable + BAD_FLAG);
+    }
+
+    /**
+     * Demonstration method containing additional intentional
+     * Checkstyle violations.
+     *
+     * <p>This method is also never called. It is kept in the source only
+     * for educational purposes so that Jenkins can show several
+     * Checkstyle findings in the report.</p>
+     */
+    private static void another_bad_method() {
+        int anotherBadVariable = 42;
+        String BAD_NAME = "example";
+        boolean wrong_flag = false;
+
+        System.out.println(
+                anotherBadVariable + BAD_NAME + wrong_flag);
+    }
 }
