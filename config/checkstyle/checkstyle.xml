@@ -4,21 +4,80 @@
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+
+    <!-- Encoding -->
     <property name="charset" value="UTF-8"/>
 
+
+    <!-- File level checks -->
+
+    <!-- Maximum line length -->
     <module name="LineLength">
         <property name="max" value="120"/>
         <property name="ignorePattern" value="^package.*|^import.*"/>
     </module>
 
+    <!-- No tab characters -->
     <module name="FileTabCharacter"/>
 
+
+    <!-- Java source checks -->
+
     <module name="TreeWalker">
+
+        <!-- Imports -->
         <module name="AvoidStarImport"/>
+
+
+        <!-- Formatting -->
+
         <module name="WhitespaceAround"/>
+
+        <module name="OperatorWrap">
+            <property name="option" value="nl"/>
+        </module>
+
+
+        <!-- Naming -->
+
+        <!-- Detects bad_method_name() -->
+        <module name="MethodName"/>
+
+        <!-- Detects BadVariable, wrong_variable -->
+        <module name="LocalVariableName"/>
+
+        <!-- Detects BAD_CONSTANT style problems -->
+        <module name="ConstantName"/>
+
+
+        <!-- Documentation -->
+
         <module name="MissingJavadocType">
             <property name="scope" value="public"/>
         </module>
+
+        <module name="JavadocMethod">
+            <property name="scope" value="public"/>
+        </module>
+
+
+        <!-- Code quality -->
+
+        <!-- Finds TODO comments -->
         <module name="TodoComment"/>
+
+        <!-- Prevents empty blocks -->
+        <module name="EmptyBlock"/>
+
+        <!-- Limits method size -->
+        <module name="MethodLength">
+            <property name="max" value="60"/>
+        </module>
+
+
+        <!-- Prevent duplicated code -->
+        <module name="EqualsHashCode"/>
+
     </module>
+
 </module>
